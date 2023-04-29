@@ -4,6 +4,8 @@ const { fonts, dd } = require("../commons/pdfDD");
 
 exports.createInvoice = (req, res) => {
   try {
+    const { flag } = req.body;
+
     var printer = new pdfMakePrinter(fonts);
     var doc = printer.createPdfKitDocument(dd);
 
